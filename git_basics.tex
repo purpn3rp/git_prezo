@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+\usepackage{outlines}
+
+\title{Git Basics}
+\author{Steve Offutt}
+\institute{OSSEM}
+\date{\today}
+
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame} 
+
+\section{What is version control?}
+\begin{frame}
+    \frametitle{What is version control?}
+    \begin{itemize}
+        \item{From Git's Website:}
+            "Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later."
+        \item{Keep track of stuff! Software projects, documentation, anything really.}
+    \end{itemize}
+\end{frame} 
+
+\section{Installing Git}
+\subsection{Windows}
+\subsection{Linux}
+\subsection{OSX}
+\begin{frame}
+    \frametitle{Installing Git}
+    \begin{itemize}
+
+        \item{Windows}
+        \begin{itemize}
+            \item{Got to \url{https://git-scm.com/download/win} and download the installer.}
+            \item{This will install the Git shell and setup the windows environment for Git.}
+        \end{itemize}
+
+        \item{Linux}
+        \begin{itemize}
+                \item{Should be installed by default. If not, use your distributions package manager to install Git from the repositories.}
+                \item{Example: Ubuntu, type sudo apt-get install git}
+        \end{itemize}
+
+        \item{OSX}
+        \begin{itemize}
+            \item{I don't know. Google it.}
+        \end{itemize}
+
+    \end{itemize}
+\end{frame} 
+
+\section{Basic Commands}
+\begin{frame}
+    \frametitle{Basic Commands}
+    \begin{itemize}
+
+        \item{init}
+        \begin{itemize}
+            \item{This is what you would use to typically start a NEW git repository.}
+            \item{Suppose you wanted to start a project called CoolProject in /home/OSSEM/Projects/}
+            \item{You would use the command git init CoolProject}
+            \item{Just like that the CoolProject directory is made along with all of the repository files/folders.}
+        \end{itemize}
+
+        \item{clone}
+        \begin{itemize}
+            \item{Used to clone a repository.}
+            \item{Lets clone the DC Darknet Github defcon24 repo with git clone https://github.com/thedarknet/defcon24.git}
+            \item{The ENTIRE contents, including branches and commit histories, will be cloned to your working directory. How cool!}
+        \end{itemize}
+        
+        \item{status}
+
+        \item{add}
+
+        \item{commit}
+
+        \item{branch}
+
+        \item{push}
+
+    \end{itemize}
+\end{frame}
+
+\end{document}
