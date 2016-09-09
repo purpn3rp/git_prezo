@@ -127,7 +127,7 @@
 
     \item{\texttt{git add}}
         \begin{itemize}
-            \item{Simply add files or directories to a stage.}
+            \item{Simply stage files or directories.}
         \end{itemize}
 
     \end{itemize}
@@ -143,7 +143,7 @@
         \item{Git forces you to say something about the commit.}
         \item{If only the command git commit is typed, git will launch the editor of your choice defined by the \texttt{\$EDITOR} environment variable}
         \item{After entering your message into the editor, git will continue with the commit.}
-        \item{It is also recommmended that you run git status prior to commiting to ensure that everything is there.}
+        \item{It is also recommmended that you run \texttt{git status} prior to commiting to ensure that everything is there.}
         \item{Your name and email typically should be set before submitting a commit.}
     \end{itemize}
 \end{frame}
@@ -167,10 +167,10 @@
     \begin{itemize}
         \item{\texttt{git merge}}
         \begin{itemize}
-            \item{This command merges your changes on a branch to the master branch.}
-            \item{If there is conflicts, git will tell you about the conflicts and also report in the file exactly where the conflict is. Helpful if it is source code.}
-            \item{Executing \texttt{git merge branchA} from master branch will merge changes from branchA into master.}
-            \item{This also works for merges between branches.}
+            \item{This command merges your changes on a branch to another branch.}
+            \item{If there are conflicts, git will tell you about the conflicts and also report in the file exactly where the conflict is. Helpful if it is source code.}
+            \item{Executing \texttt{git merge branchA} from the master branch will merge changes from branchA into master.}
+            \item{This also works for merges between branches(I think).}
         \end{itemize}
 
     \item{\texttt{git push}}
@@ -188,7 +188,7 @@
     \frametitle{Who cares?}
     \begin{itemize}
         \item{Without a doubt people in this room who deal with software care.}
-        \item{How about OSSEM? Could we use git for...}
+        \item{What about OSSEM? Could we use git for...}
             \begin{itemize}
                 \item{Badge reader}
                 \item{Presentation templates}
@@ -204,9 +204,9 @@
 
 \section{References}
 \begin{frame}
-    \frametitle{References. Take a look it's in a book...}
+    \frametitle{References. Take a look, it's in a book...}
     \begin{itemize}
-        \item{Git's website. They have a book!}
+        \item{Git's website. They have a (free)book!}
             \begin{itemize}
                 \item{\url{https://git-scm.com/book/en/v2}}
             \end{itemize}
@@ -216,5 +216,4 @@
             \end{itemize}
     \end{itemize}
 \end{frame}
-
 \end{document}
