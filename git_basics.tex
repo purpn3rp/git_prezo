@@ -1,8 +1,13 @@
 \documentclass{beamer}
+\usetheme{simple}
 \usetheme{Boadilla}
-\usepackage{outlines}
+\usepackage{lmodern}
+\usepackage[scale=2]{ccicons}
+
+\setwatermark{\includegraphics[height=8cm]{img/Git-Icon-Black_.png}}
 
 \title{Git Basics}
+\subtitle{Taken from a complete n00b}
 \author{Steve Offutt}
 \institute{OSSEM}
 \date{\today}
@@ -18,13 +23,17 @@
     \tableofcontents
 \end{frame} 
 
-\section{What is version control?}
+\section{What is git?}
 \begin{frame}
-    \frametitle{What is version control?}
+    \frametitle{What is git?}
     \begin{itemize}
         \item{From Git's Website:}
             "Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later."
         \item{Keep track of stuff! Software projects, documentation, anything really.}
+        \item{git is decentralized version control. The repository is on your local machine, always.}
+            \begin{itemize}
+                \item{This means that if you are on the road and need to roll back to an older version, no problem! Just type the commands.}
+            \end{itemize}
     \end{itemize}
 \end{frame} 
 
@@ -56,12 +65,38 @@
     \end{itemize}
 \end{frame} 
 
+\section{GUI vs CLI}
+\begin{frame}
+    \frametitle{How to use git? GUI or CLI?}
+    \begin{itemize}
+        \item{The most universal way of using git is via the command line}
+        \item{A lot of git GUIs are very nice. A visual really helps with branches.}
+        \item{GitKraken is pretty cool looking! Cross platform and free (I think?).}
+        \item{giggle and gitg both look pretty nifty as well.}
+        \item{There are tons. To get you started check out \url{https://git-scm.com/downloads/guis}}
+        \item{What makes sense for your project?}
+    \end{itemize}
+\end{frame}
+
+
+\section{Staging?}
+\begin{frame}
+    \frametitle{WTF does staging in git mean?}
+    \begin{itemize}
+        \item{In git you must "stage" or "unstage" items prior to commits.}
+        \item{Think of this as "setting the stage" for your commit.}
+        \item{All my stuff is set, now I'm ready to do my thing!}
+        \item{This is very important when using git as to make sure everything you do or don't want added to your project is or is not added.}
+    \end{itemize}
+\end{frame}
+
 \section{Basic Commands}
+\subsection{init, clone, status, add}
 \begin{frame}
     \frametitle{Basic Commands}
     \begin{itemize}
 
-        \item{init}
+        \item{git init}
         \begin{itemize}
             \item{This is what you would use to typically start a NEW git repository.}
             \item{Suppose you wanted to start a project called CoolProject in /home/OSSEM/Projects/}
@@ -69,23 +104,75 @@
             \item{Just like that the CoolProject directory is made along with all of the repository files/folders.}
         \end{itemize}
 
-        \item{clone}
+        \item{git clone}
         \begin{itemize}
             \item{Used to clone a repository.}
             \item{Lets clone the DC Darknet Github defcon24 repo with git clone https://github.com/thedarknet/defcon24.git}
             \item{The ENTIRE contents, including branches and commit histories, will be cloned to your working directory. How cool!}
         \end{itemize}
         
-        \item{status}
+        \item{git status}
+        \begin{itemize}
+            \item{Display the state of the current branch.}
+            \item{Also displays the current branch. Just in case you forgot.}
+            \item{Files that have been added or deleted from the repo.}
+        \end{itemize}
 
-        \item{add}
+        \item{git add}
+        \begin{itemize}
+            \item{Simply add files or directories to a stage.}
+        \end{itemize}
 
-        \item{commit}
+    \end{itemize}
+\end{frame}
 
-        \item{branch}
+\subsection{commit}
+\begin{frame}
+    \frametitle{commit}
+    \begin{itemize}
+        \item{You must stage your items in your repo prior to commiting.}
+        \item{All unstaged items will not be brought into the commit.}
+        \item{This command will take your current staged items and commit your changes!}
+        \item{Git forces you to say something about the commit.}
+        \item{If only the command git commit is typed, git will launch the editor of your choice defined by the \$EDITOR environment variable}
+        \item{After entering your message into the editor, git will continue with the commit.}
+        \item{It is also recommmended that you run git status prior to commiting to ensure that everything is there.}
+        \item{Your name and email typically should be set before submitting a commit.}
+    \end{itemize}
+\end{frame}
+
+\subsection{merge and push}
+\begin{frame}
+    \frametitle{merge and push}
+    \begin{itemize}
+        \item{merge}
+        \begin{itemize}
+            \item{This command merges your changes on the current branch to the master branch.}
+            \item{If there is conflicts, git will tell you about the conflicts and also report in the file exactly where the conflict is. Helpful if it is source code.}
+        \end{itemize}
 
         \item{push}
+        \begin{itemize}
+            \item{This command takes your commits and pushes them to the remote repository.}
+            \item{Of course you must have permission to submit changes to the result repo...}
+            \item{You config file must be set up prior to pushing!}
+        \end{itemize}
 
+    \end{itemize}
+\end{frame}
+
+\section{Who cares?}
+\begin{frame}
+    \frametitle{Who cares?}
+    \begin{itemize}
+        \item{Without a doubt people in this room who deal with software care.}
+        \item{How about OSSEM? Could we use git for...}
+            \begin{itemize}
+                \item{Badge reader}
+                \item{Presentation templates}
+                \item{By-laws. Do we even have those?}
+                \item{Keeping track of projects}
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
