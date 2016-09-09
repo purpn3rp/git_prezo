@@ -3,8 +3,9 @@
 \usetheme{Boadilla}
 \usepackage{lmodern}
 \usepackage[scale=2]{ccicons}
+\usepackage{hyperref}
 
-\setwatermark{\includegraphics[height=8cm]{img/Git-Icon-Black_.png}}
+\setwatermark{\includegraphics[height=8cm]{img/logomark-orange-color.png}}
 
 \title{Git Basics}
 \subtitle{Taken from a complete n00b}
@@ -19,7 +20,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Outline}
+    \frametitle{Agenda}
     \tableofcontents
 \end{frame} 
 
@@ -46,29 +47,33 @@
     \frametitle{Installing Git}
     \begin{itemize}
 
-        \item{Windows}
-        \begin{itemize}
-            \item{Got to \url{https://git-scm.com/download/win} and download the installer.}
-            \item{This will install the Git shell and setup the windows environment for Git.}
-        \end{itemize}
+        \item{Take it away Josh!}
+        %\item{Windows}
+        %\begin{itemize}
+        %    \item{Ask Josh ;-)}
+        %    %\item{Got to \url{https://git-scm.com/download/win} and download the installer.}
+        %    %\item{This will install the Git shell and setup the windows environment for Git.}
+        %\end{itemize}
 
-        \item{Linux}
-        \begin{itemize}
-                \item{Should be installed by default. If not, use your distributions package manager to install Git from the repositories.}
-                \item{Example: Ubuntu, type sudo apt-get install git}
-        \end{itemize}
+        %\item{Linux}
+        %\begin{itemize}
+        %    \item{Ask Josh ;-)}
+        %    %    \item{Should be installed by default. If not, use your distributions package manager to install Git from the repositories.}
+        %    %    \item{Example: Ubuntu, type sudo apt-get install git}
+        %\end{itemize}
 
-        \item{OSX}
-        \begin{itemize}
-            \item{I don't know. Google it.}
-        \end{itemize}
-
+        %\item{OSX}
+        %\begin{itemize}
+        %    \item{Ask Josh ;-)}
+        %    %\item{I don't know. Google it.}
+        %\end{itemize}
     \end{itemize}
+
 \end{frame} 
 
 \section{GUI vs CLI}
 \begin{frame}
-    \frametitle{How to use git? GUI or CLI?}
+    \frametitle{How to use git? GUI or CLI? Choose wisely...}
     \begin{itemize}
         \item{The most universal way of using git is via the command line}
         \item{A lot of git GUIs are very nice. A visual really helps with branches.}
@@ -79,14 +84,15 @@
     \end{itemize}
 \end{frame}
 
-
 \section{Staging?}
 \begin{frame}
     \frametitle{WTF does staging in git mean?}
     \begin{itemize}
         \item{In git you must "stage" or "unstage" items prior to commits.}
         \item{Think of this as "setting the stage" for your commit.}
-        \item{All my stuff is set, now I'm ready to do my thing!}
+            \begin{itemize}
+                \item{All my stuff is set, now I'm ready to do my thing!}
+            \end{itemize}
         \item{This is very important when using git as to make sure everything you do or don't want added to your project is or is not added.}
     \end{itemize}
 \end{frame}
@@ -97,29 +103,29 @@
     \frametitle{Basic Commands}
     \begin{itemize}
 
-        \item{git init}
+        \item{\texttt{git init}}
         \begin{itemize}
             \item{This is what you would use to typically start a NEW git repository.}
             \item{Suppose you wanted to start a project called CoolProject in /home/OSSEM/Projects/}
-            \item{You would use the command git init CoolProject}
+            \item{You would use the command \texttt{git init CoolProject}}
             \item{Just like that the CoolProject directory is made along with all of the repository files/folders.}
         \end{itemize}
 
-        \item{git clone}
+    \item{\texttt{git clone}}
         \begin{itemize}
             \item{Used to clone a repository.}
             \item{Lets clone the DC Darknet Github defcon24 repo with git clone https://github.com/thedarknet/defcon24.git}
             \item{The ENTIRE contents, including branches and commit histories, will be cloned to your working directory. How cool!}
         \end{itemize}
         
-        \item{git status}
+    \item{\texttt{git status}}
         \begin{itemize}
             \item{Display the state of the current branch.}
             \item{Also displays the current branch. Just in case you forgot.}
             \item{Files that have been added or deleted from the repo.}
         \end{itemize}
 
-        \item{git add}
+    \item{\texttt{git add}}
         \begin{itemize}
             \item{Simply add files or directories to a stage.}
         \end{itemize}
@@ -129,13 +135,13 @@
 
 \subsection{commit}
 \begin{frame}
-    \frametitle{commit}
+    \frametitle{\texttt{git commit}}
     \begin{itemize}
         \item{You must stage your items in your repo prior to commiting.}
         \item{All unstaged items will not be brought into the commit.}
         \item{This command will take your current staged items and commit your changes!}
         \item{Git forces you to say something about the commit.}
-        \item{If only the command git commit is typed, git will launch the editor of your choice defined by the \$EDITOR environment variable}
+        \item{If only the command git commit is typed, git will launch the editor of your choice defined by the \texttt{\$EDITOR} environment variable}
         \item{After entering your message into the editor, git will continue with the commit.}
         \item{It is also recommmended that you run git status prior to commiting to ensure that everything is there.}
         \item{Your name and email typically should be set before submitting a commit.}
@@ -151,21 +157,23 @@
             \begin{itemize}
                 \item{Cool story, bro. Make a branch!}
             \end{itemize}
-        \item{git branch branch\_name will make a branch called branch\_name.}
+        \item{\texttt{git branch branch\_name} will make a branch called branch\_name.}
     \end{itemize}
 \end{frame}
 
 \subsection{merge and push}
 \begin{frame}
-    \frametitle{merge and push}
+    \frametitle{\texttt{git merge} and \texttt{git push}}
     \begin{itemize}
-        \item{merge}
+        \item{\texttt{git merge}}
         \begin{itemize}
-            \item{This command merges your changes on the current branch to the master branch.}
+            \item{This command merges your changes on a branch to the master branch.}
             \item{If there is conflicts, git will tell you about the conflicts and also report in the file exactly where the conflict is. Helpful if it is source code.}
+            \item{Executing \texttt{git merge branchA} from master branch will merge changes from branchA into master.}
+            \item{This also works for merges between branches.}
         \end{itemize}
 
-        \item{push}
+    \item{\texttt{git push}}
         \begin{itemize}
             \item{This command takes your commits and pushes them to the remote repository.}
             \item{Of course you must have permission to submit changes to the result repo...}
@@ -186,6 +194,25 @@
                 \item{Presentation templates}
                 \item{By-laws. Do we even have those?}
                 \item{Keeping track of projects}
+            \end{itemize}
+        \item{OSSEM Github started 9/9/2016! w00t!}
+            \begin{itemize}
+                \item{\url{https://github.com/OSSEM-Holon}}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{References}
+\begin{frame}
+    \frametitle{References. Take a look it's in a book...}
+    \begin{itemize}
+        \item{Git's website. They have a book!}
+            \begin{itemize}
+                \item{\url{https://git-scm.com/book/en/v2}}
+            \end{itemize}
+        \item{"Ry's git Tutorial" by Ryan Hudson on Amazon.com}
+            \begin{itemize}
+                \item{\url{https://www.amazon.com/Rys-Git-Tutorial-Ryan-Hodson-ebook/dp/B00QFIA5OC/}} 
             \end{itemize}
     \end{itemize}
 \end{frame}
